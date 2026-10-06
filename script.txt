@@ -1,0 +1,28 @@
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/gen2"))()
+
+local Window = Rayfield:CreateWindow({
+    name = "TP Hub",
+    subtitle = "Teleport",
+    sidebarLayout = true,
+})
+
+local TP = Window:CreateTab({
+    name = "TPs",
+    icon = 0,
+})
+
+TP:CreateButton({
+    name = "TP to Base",
+    callback = function()
+        local target = workspace.Plots["2"].PlayerPlot
+        game.Players.LocalPlayer.Character:PivotTo(target:GetPivot())
+    end,
+})
+
+TP:CreateButton({
+    name = "TP to End",
+    callback = function()
+        local target = workspace.MainMapFolder.Stages.Stage10
+        game.Players.LocalPlayer.Character:PivotTo(target:GetPivot())
+    end,
+})
